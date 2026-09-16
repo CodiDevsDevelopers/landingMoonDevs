@@ -1,4 +1,4 @@
-export const CODIDEVS_WHATSAPP = "593962562482"
+export const CODIDEVS_WHATSAPP = "593983342730"
 
 export function waUrl(text: string) {
   return `https://wa.me/${CODIDEVS_WHATSAPP}?text=${encodeURIComponent(text)}`

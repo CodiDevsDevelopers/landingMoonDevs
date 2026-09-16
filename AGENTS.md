@@ -14,7 +14,7 @@
 
 ## High-risk edit points in Next
 - En `proyect-next/components/codidevs/home-landing.tsx` los IDs/anclas están acoplados a navegación interna (`#inicio`, `#nuestro-servicio`, `#servicios`, `#contacto`, `#faq`, `#formulario`).
-- Número WhatsApp `593962562482` aparece en varios puntos (`home-landing.tsx`, `lib/whatsapp-links.ts`, `lib/home-json-ld.ts`). Si cambia, actualizar en una sola pasada.
+- Número WhatsApp `593983342730` aparece en varios puntos (`home-landing.tsx`, `lib/whatsapp-links.ts`, `lib/home-json-ld.ts`). Si cambia, actualizar en una sola pasada.
 
 ## SEO source of truth
 - SEO metadata se mantiene en App Router:

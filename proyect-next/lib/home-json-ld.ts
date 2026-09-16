@@ -1,4 +1,4 @@
-const WHATSAPP = "593962562482"
+const WHATSAPP = "593983342730"
 
 export const homeProfessionalServiceJsonLd = {
   "@context": "https://schema.org",
