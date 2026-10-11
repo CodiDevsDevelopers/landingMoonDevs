@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
-import Script from "next/script"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 import { EffectsProvider } from "@/components/codidevs/effects-provider"
 import "./globals.css"
 
@@ -70,6 +70,11 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-6WCL0MT6LK');`}
         </Script>
+        <Script
+          src="https://umami.codidevs.com/script.js"
+          data-website-id="1a1253f4-5b84-4b91-9fe5-d8a46a1a8487"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
