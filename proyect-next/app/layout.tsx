@@ -61,14 +61,14 @@ export default function RootLayout({
         <EffectsProvider>{children}</EffectsProvider>
         {process.env.NODE_ENV === "production" && <Analytics />}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-6WCL0MT6LK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-E02SJTVZVJ"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-6WCL0MT6LK');`}
+gtag('config', 'G-E02SJTVZVJ');`}
         </Script>
         <Script
           src="https://umami.codidevs.com/script.js"
