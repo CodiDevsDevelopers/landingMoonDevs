@@ -1,5 +1,6 @@
 import Link from "next/link"
 import dynamic from "next/dynamic"
+import { PANEL_URL } from "@/lib/panel-links"
 import {
   ArrowUpRight,
   Braces,
@@ -197,6 +198,7 @@ export function HomeLanding() {
       <SiteNav
         links={navLinks}
         ctas={[
+          { label: "Entrar al portal", href: PANEL_URL, variant: "ghost" },
           { label: "Agendar Llamada", href: WA_HOME_REUNION, external: true, variant: "ghost" },
           { label: "Diagnóstico Gratis", href: "#formulario" },
         ]}
