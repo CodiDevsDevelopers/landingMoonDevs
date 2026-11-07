@@ -1,4 +1,5 @@
 export const CODIDEVS_WHATSAPP = "593983342730"
+export const CODIDEVS_WHATSAPP_DISPLAY = "+593 98 334 2730"
 
 export function waUrl(text: string) {
   return `https://wa.me/${CODIDEVS_WHATSAPP}?text=${encodeURIComponent(text)}`

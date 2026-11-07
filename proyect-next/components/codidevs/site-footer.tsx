@@ -1,9 +1,37 @@
-import { ArrowUpRight, Instagram } from "lucide-react"
+import { ArrowUpRight, Instagram, Mail, MessageCircle } from "lucide-react"
 import { Logo } from "./logo"
-import { CODIDEVS_INSTAGRAM_URL } from "@/lib/social-links"
+import {
+  CODIDEVS_INSTAGRAM_URL,
+  CODIDEVS_SUPPORT_EMAIL,
+} from "@/lib/social-links"
+import { CODIDEVS_WHATSAPP_DISPLAY, waUrl } from "@/lib/whatsapp-links"
 
 const services = ["Software a medida", "Aplicaciones web", "Automatizaciones", "Integraciones API"]
 const company = ["Manta, Ecuador", "Trabajo remoto", "Sprints semanales", "Soporte evolutivo"]
+
+const contactLinks = [
+  {
+    label: "@codidevs en Instagram",
+    ariaLabel: "CodiDevs en Instagram",
+    href: CODIDEVS_INSTAGRAM_URL,
+    icon: Instagram,
+    external: true,
+  },
+  {
+    label: `WhatsApp ${CODIDEVS_WHATSAPP_DISPLAY}`,
+    ariaLabel: "Escribir a CodiDevs por WhatsApp",
+    href: waUrl("Hola CodiDevs, quiero conversar sobre un proyecto de software."),
+    icon: MessageCircle,
+    external: true,
+  },
+  {
+    label: CODIDEVS_SUPPORT_EMAIL,
+    ariaLabel: `Enviar correo a ${CODIDEVS_SUPPORT_EMAIL}`,
+    href: `mailto:${CODIDEVS_SUPPORT_EMAIL}`,
+    icon: Mail,
+    external: false,
+  },
+]
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
@@ -26,22 +54,27 @@ export function SiteFooter() {
               Sistemas medibles, mantenibles y listos para escalar.
             </div>
 
-            <a
-              href={CODIDEVS_INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="CodiDevs en Instagram"
-              className="group mt-5 inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card transition-colors group-hover:border-primary/30 group-hover:text-primary">
-                <Instagram className="size-4" aria-hidden="true" />
-              </span>
-              <span>@codidevs en Instagram</span>
-              <ArrowUpRight
-                className="size-3.5 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </a>
+            <div className="mt-5 flex flex-col gap-3">
+              {contactLinks.map(({ label, ariaLabel, href, icon: Icon, external }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  aria-label={ariaLabel}
+                  className="group inline-flex w-fit items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card transition-colors group-hover:border-primary/30 group-hover:text-primary">
+                    <Icon className="size-4" aria-hidden="true" />
+                  </span>
+                  <span>{label}</span>
+                  <ArrowUpRight
+                    className="size-3.5 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
 
           <FooterColumn title="Servicios" items={services} />
