@@ -21,7 +21,7 @@ import { HomeHero } from "./home-hero"
 import { MetricMarquee } from "./metric-marquee"
 import { ProcessPanel } from "./process-panel"
 import { TestimonialCard } from "./testimonial-card"
-import { WA_HOME_REUNION } from "@/lib/whatsapp-links"
+import { BookingCalendar } from "./booking-calendar"
 import { cn } from "@/lib/utils"
 
 const CalculadoraImpacto = dynamic(
@@ -197,7 +197,7 @@ export function HomeLanding() {
       <SiteNav
         links={navLinks}
         ctas={[
-          { label: "Agendar Llamada", href: WA_HOME_REUNION, external: true, variant: "ghost" },
+          { label: "Agendar Llamada", href: "#reservar", variant: "ghost" },
           { label: "Diagnóstico Gratis", href: "#formulario" },
         ]}
       />
@@ -299,9 +299,7 @@ export function HomeLanding() {
                   </p>
                 </div>
                 <a
-                  href={WA_HOME_REUNION}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#reservar"
                   className="btn-pill-primary whitespace-nowrap"
                 >
                   Reservar Diagnóstico en Meet
@@ -310,6 +308,22 @@ export function HomeLanding() {
               </div>
             </div>
           </Reveal>
+        </section>
+
+        <section id="reservar" className="section-performance relative z-10 px-4 pb-20 sm:pb-28">
+          <div className="mx-auto grid max-w-6xl items-start gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+            <Reveal className="text-left">
+              <SectionHeader
+                eyebrow="Agenda Directa"
+                title="Reserva tu diagnóstico de 15 minutos por Google Meet."
+                body="Elige el horario que mejor te venga. Al confirmar recibirás la invitación de Google Meet por correo y podrás reprogramar sin escribirnos."
+              />
+            </Reveal>
+
+            <Reveal axis="x">
+              <BookingCalendar />
+            </Reveal>
+          </div>
         </section>
 
         <section id="formulario" className="section-performance relative z-10 px-4 pb-20 sm:pb-28">
