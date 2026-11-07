@@ -1,3 +1,5 @@
+import { CODIDEVS_INSTAGRAM_URL } from "@/lib/social-links"
+
 const WHATSAPP = "593983342730"
 
 export const homeProfessionalServiceJsonLd = {
@@ -34,5 +36,5 @@ export const homeProfessionalServiceJsonLd = {
     contactType: "sales",
     availableLanguage: ["es"],
   },
-  sameAs: [`https://wa.me/${WHATSAPP}`],
+  sameAs: [`https://wa.me/${WHATSAPP}`, CODIDEVS_INSTAGRAM_URL],
 } as const

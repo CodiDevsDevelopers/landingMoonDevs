@@ -1,4 +1,6 @@
+import { ArrowUpRight, Instagram } from "lucide-react"
 import { Logo } from "./logo"
+import { CODIDEVS_INSTAGRAM_URL } from "@/lib/social-links"
 
 const services = ["Software a medida", "Aplicaciones web", "Automatizaciones", "Integraciones API"]
 const company = ["Manta, Ecuador", "Trabajo remoto", "Sprints semanales", "Soporte evolutivo"]
@@ -23,6 +25,23 @@ export function SiteFooter() {
               <span className="size-1.5 rounded-full bg-accent animate-pulse-glow max-md:animate-none" />
               Sistemas medibles, mantenibles y listos para escalar.
             </div>
+
+            <a
+              href={CODIDEVS_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="CodiDevs en Instagram"
+              className="group mt-5 inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <span className="flex size-9 items-center justify-center rounded-full border border-border bg-card transition-colors group-hover:border-primary/30 group-hover:text-primary">
+                <Instagram className="size-4" aria-hidden="true" />
+              </span>
+              <span>@codidevs en Instagram</span>
+              <ArrowUpRight
+                className="size-3.5 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </a>
           </div>
 
           <FooterColumn title="Servicios" items={services} />
