@@ -88,7 +88,7 @@ export default function AppsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(appsJsonLd),
+          __html: JSON.stringify(appsJsonLd).replace(/</g, "\\u003c"),
         }}
       />
       <main className="relative min-h-screen overflow-x-clip bg-background text-foreground">
