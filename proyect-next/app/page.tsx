@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  const homeJsonLd = JSON.stringify(homeProfessionalServiceJsonLd)
+  const homeJsonLd = JSON.stringify(homeProfessionalServiceJsonLd).replace(/</g, "\\u003c")
 
   return (
     <>
